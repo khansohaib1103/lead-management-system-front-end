@@ -22,7 +22,7 @@ The Lead Management System is a web-based application designed to help businesse
 1. Clone the repository
 2. Navigate to the project directory
 ```bash
-cd lead-management-system
+cd lead-management-system-front-end
 ```
 3. Install dependencies
 ```bash
@@ -112,7 +112,7 @@ lead-management-system/
 // Handles error responses and data formatting
 ```
 
-## 4. Testing/Error Handling
+## 4. Error Handling
 
 ### Error Handling
 1. Form Validation Errors
@@ -124,16 +124,6 @@ lead-management-system/
    - Server errors: Show appropriate error notifications
    - Validation errors: Display server-side validation messages
 
-### Testing
-1. Unit Tests
-   - Component rendering tests
-   - Form validation tests
-   - API integration tests
-
-2. End-to-End Testing
-   - Form submission flow
-   - Lead deletion flow
-   - Error scenarios
 
 ### Deployment Guide
 
@@ -142,8 +132,3 @@ lead-management-system/
 ```bash
 npm run build
 ```
-
----
-
-For any questions or issues, please contact the development team.
-# lead-management-system-front-end
