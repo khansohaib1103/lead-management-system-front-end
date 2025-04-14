@@ -1,70 +1,149 @@
-# Getting Started with Create React App
+# Lead Management System - Technical Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Background
 
-## Available Scripts
+### Purpose
+The Lead Management System is a web-based application designed to help businesses manage and track potential customer leads efficiently. It provides a user-friendly interface for creating, viewing, and managing lead information with features for storing contact details, company information, and additional notes.
 
-In the project directory, you can run:
+### Tech Stack
+#### Frontend
+- React.js (v18.2.0)
+- Formik (v2.4.6) for form management
+- Yup (v1.6.1) for form validation
+- React Router (v6.22.3) for navigation
+- CSS3 for styling with modern animations
 
-### `npm start`
+### Setup Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Prerequisites
+- Node.js (v14 or higher)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Frontend Setup
+1. Clone the repository
+2. Navigate to the project directory
+```bash
+cd lead-management-system
+```
+3. Install dependencies
+```bash
+npm install
+```
+4. Start the development server
+```bash
+npm start
+```
 
-### `npm test`
+## 2. Module Requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Functional Requirements
+1. Lead Management
+   - Create new leads with contact information
+   - View list of all leads
+   - Delete existing leads
+   - Allow multiple leads with the same email address
 
-### `npm run build`
+2. Form Validation
+   - Validate required fields (name, email, phone, company)
+   - Validate email format
+   - Validate phone number format
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. User Interface
+   - Responsive design for all screen sizes
+   - Modal forms for lead creation
+   - Confirmation dialogs for deletions
+   - Loading states for async operations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Non-Functional Requirements
+1. Performance
+   - Page load time under 2 seconds
+   - Form submission response under 1 second
+   - Smooth animations (60fps)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Security
+   - CORS configuration for API access
+   - Input validation and sanitization
+   - Error handling without exposing sensitive information
 
-### `npm run eject`
+3. Reliability
+   - Error recovery and graceful degradation
+   - Proper error messages for users
+   - Data persistence in database
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Maintainability
+   - Modular code structure
+   - Consistent coding standards
+   - Comprehensive documentation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 3. Module/Feature Implementation Details
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Folder Structure
+```
+lead-management-system/
+├── src/
+│   ├── components/           # React components
+│   │   ├── LeadForm.jsx     # Form for creating leads
+│   │   ├── LeadTable.jsx    # Display leads in table
+│   │   ├── LeadModal.jsx    # Modal wrapper for form
+│   │   └── DeleteConfirmation.jsx
+│   ├── api.jsx              # API integration
+│   ├── App.jsx              # Main application component
+│   └── index.jsx            # Application entry point
+├── public/                  # Static files
+└── package.json            # Project dependencies
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Key Components
 
-## Learn More
+#### LeadForm.jsx
+```javascript
+// Handles lead creation with form validation using Formik and Yup
+// Manages form state and submission
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### LeadTable.jsx
+```javascript
+// Displays leads in a responsive table
+// Handles lead deletion requests
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### api.jsx
+```javascript
+// Manages API communications with backend
+// Handles error responses and data formatting
+```
 
-### Code Splitting
+## 4. Testing/Error Handling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Error Handling
+1. Form Validation Errors
+   - Display inline error messages
+   - Prevent form submission until valid
 
-### Analyzing the Bundle Size
+2. API Error Handling
+   - Network errors: Display user-friendly message
+   - Server errors: Show appropriate error notifications
+   - Validation errors: Display server-side validation messages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Testing
+1. Unit Tests
+   - Component rendering tests
+   - Form validation tests
+   - API integration tests
 
-### Making a Progressive Web App
+2. End-to-End Testing
+   - Form submission flow
+   - Lead deletion flow
+   - Error scenarios
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Deployment Guide
 
-### Advanced Configuration
+#### Local Deployment
+1. Build frontend:
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any questions or issues, please contact the development team.
+# lead-management-system-front-end
