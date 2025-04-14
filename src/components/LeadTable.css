@@ -1,0 +1,149 @@
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+.lead-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.lead-table th,
+.lead-table td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.lead-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 1px solid #e9ecef;
+  position: sticky;
+  top: 0;
+}
+
+.lead-table tr td {
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s;
+}
+
+.lead-table tr:last-child td {
+  border-bottom: none;
+}
+
+.lead-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.notes-cell {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.trash-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #ff6b6b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  position: relative;
+}
+
+.trash-icon::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 9px;
+  width: 10px;
+  height: 11px;
+  border: 1.5px solid currentColor;
+  border-top: none;
+  border-radius: 0 0 2px 2px;
+}
+
+.trash-icon::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  width: 14px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 1px;
+  box-shadow: 0 -1.5px 0 0.5px currentColor; 
+}
+
+.trash-icon .trash-lines {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 4px;
+  height: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trash-icon .trash-lines::before,
+.trash-icon .trash-lines::after {
+  content: "";
+  width: 1px;
+  height: 7px;
+  background-color: currentColor;
+  position: absolute;
+}
+
+.trash-icon .trash-lines::before {
+  left: 0;
+}
+
+.trash-icon .trash-lines::after {
+  left: 3px;
+}
+
+.trash-icon:hover {
+  background-color: #f1f3f5;
+}
+
+.trash-icon:active {
+  transform: scale(0.95);
+}
+
+.no-leads {
+  text-align: center;
+  padding: 40px 30px;
+  color: #6c757d;
+  background-color: white;
+  border-radius: 4px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.no-leads::before {
+  content: "📋";
+  display: block;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.actions-cell {
+  text-align: center;
+}

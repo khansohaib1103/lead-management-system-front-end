@@ -1,0 +1,170 @@
+.lead-form {
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  animation: fadeIn 0.5s ease-in;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background-color: #f8f9fa;
+  color: var(--text-color);
+  height: auto;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  height: 80px;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: white;
+  box-shadow: 0 0 0 2px var(--shadow-color);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: var(--primary-color);
+}
+
+.error-input {
+  border-color: var(--error-color) !important;
+  background-color: #fff9f9 !important;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 12px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  padding-left: 2px !important;
+  border-radius: 4px !important;
+  animation: shake 0.5s ease-in-out;
+}
+
+.error-message::before {
+  content: "⚠️";
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+.form-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.form-actions button {
+  background: linear-gradient(45deg, var(--primary-color), #a29bfe);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  min-width: 100px;
+}
+
+.form-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.form-actions button:active {
+  transform: translateY(1px);
+}
+
+.form-actions button:disabled {
+  background: #e9ecef;
+  color: #adb5bd;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  animation: fadeInUp 0.3s ease forwards;
+  animation-delay: calc(var(--index, 0) * 0.05s);
+  opacity: 0;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+
+.lead-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  background: linear-gradient(45deg, rgba(108, 92, 231, 0.05), rgba(168, 230, 207, 0.05));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.api-error-message {
+  background-color: #fff5f5;
+  color: #ff6b6b;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ff6b6b;
+  font-size: 14px;
+  animation: shake 0.5s ease-in-out;
+}
+
+.api-error-message::before {
+  content: "⚠️";
+  margin-right: 8px;
+}
