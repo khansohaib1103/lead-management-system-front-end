@@ -5,14 +5,29 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
 import "./LeadForm.css"
 
+const ALLOWED_EMAIL_DOMAINS = [
+  'gmail.com',
+  'outlook.com',
+  'yahoo.com',
+  'aol.com',
+  'proton.me',
+  'zoho.com',
+  'gmx.net',
+  'icloud.com'
+];
+
 const LeadSchema = Yup.object().shape({
   fullName: Yup.string()
     .required("Full name is required")
     .min(2, "Name is too short")
     .max(50, "Name is too long"),
   email: Yup.string()
-    .email("Invalid email format")
-    .required("Email is required"),
+    .required("Email is required")
+    .test("valid-email-domain", "Please use a valid email provider (gmail.com, outlook.com, yahoo.com, etc.)", value => {
+      if (!value) return false;
+      const domain = value.split('@')[1];
+      return ALLOWED_EMAIL_DOMAINS.includes(domain?.toLowerCase());
+    }),
   phoneNumber: Yup.string()
     .required("Phone number is required")
     .matches(/^[0-9+\-\s]*$/, "Phone number can only contain digits, +, -, and spaces"),
