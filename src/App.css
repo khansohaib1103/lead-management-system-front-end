@@ -155,6 +155,47 @@ body {
   z-index: -1;
 }
 
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .app-header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .add-lead-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-header h1 {
+    font-size: 20px;
+  }
+
+  .add-lead-btn {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .error-message {
+    font-size: 13px;
+    padding: 12px 15px;
+  }
+}
+
 * {
   transition: all 0.3s ease;
 }
