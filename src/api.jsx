@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8080/api/leads';
+const API_BASE_URL = 'https://lead-management-system-production-69ac.up.railway.app/api/leads';
 const TIMEOUT = 10000; 
 
 const handleApiError = (error, operation) => {
